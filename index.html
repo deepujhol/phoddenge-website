@@ -415,31 +415,36 @@ body.light-mode .hero-note{color:#78716C;}
 </head>
 <body class="light-mode">
 
-<!-- Scrolling Banner -->
-<div style="background: linear-gradient(90deg, #1a1a2e, #16213e); padding: 10px 0; overflow: hidden; border-bottom: 2px solid #e63946; position: relative; z-index: 9999;">
-  <div style="display: inline-flex; white-space: nowrap; animation: phod-scroll 28s linear infinite;">
-    <span style="color: #ffd700; font-size: 14px; font-weight: 600; padding: 0 40px;">
-      🙏 Phod Denge NEET is a student-built, 100% free app for NEET 2026 aspirants &nbsp;•&nbsp;
-      If it helped you, please give back — rate us ⭐⭐⭐⭐⭐ on Play Store &nbsp;•&nbsp;
-      Chapter-wise notes coming soon, along with summaries &nbsp;•&nbsp;
-      This is the power of students, for students 💪 &nbsp;•&nbsp;
-      <a href="https://play.google.com/store/apps/details?id=com.phoddenge.neet" target="_blank" style="color: #4fc3f7; text-decoration: none; font-weight: bold;">📲 Download Free on Play Store</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      🙏 Phod Denge NEET is a student-built, 100% free app for NEET 2026 aspirants &nbsp;•&nbsp;
-      If it helped you, please give back — rate us ⭐⭐⭐⭐⭐ on Play Store &nbsp;•&nbsp;
-      Chapter-wise notes coming soon, along with summaries &nbsp;•&nbsp;
-      This is the power of students, for students 💪 &nbsp;•&nbsp;
-      <a href="https://play.google.com/store/apps/details?id=com.phoddenge.neet" target="_blank" style="color: #4fc3f7; text-decoration: none; font-weight: bold;">📲 Download Free on Play Store</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </span>
+<!-- Floating Play Store Badge -->
+<a href="https://play.google.com/store/apps/details?id=com.phoddenge.neet" target="_blank" id="phod-badge" title="Student-built, 100% free! Rate us on Play Store">
+  <div id="phod-badge-inner">
+    <div style="font-size:28px; line-height:1;">🩺</div>
+    <div style="font-size:10px; font-weight:700; letter-spacing:0.5px; margin-top:2px;">USE & RATE</div>
+    <div style="font-size:9px; opacity:0.85;">Play Store</div>
   </div>
+</a>
+<div id="phod-tooltip">
+  <strong>NEET Phod Denge is 100% free.</strong><br>
+  <span style="font-size:11px; opacity:0.85;">Built by students, for students.</span><br><br>
+  If this helped you — Use and rate 🩺 and tell us what features you want next!
 </div>
 <style>
-@keyframes phod-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+#phod-badge { position:fixed; bottom:28px; right:22px; z-index:9999; text-decoration:none; }
+#phod-badge-inner { background:linear-gradient(135deg,#ffd700,#ff8c00); color:#1a1a2e; border-radius:50%; width:68px; height:68px; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 4px 18px rgba(255,180,0,0.55); font-family:sans-serif; text-align:center; cursor:pointer; transition:transform 0.2s; animation:phod-pulse 2s ease-in-out infinite; }
+#phod-badge:hover #phod-badge-inner { transform:scale(1.12); }
+#phod-tooltip { position:fixed; bottom:105px; right:16px; z-index:9998; background:#1a1a2e; color:#fff; border:1px solid #ffd700; border-radius:12px; padding:12px 14px; font-size:12px; font-family:sans-serif; line-height:1.7; max-width:220px; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.3); pointer-events:none; }
+@keyframes phod-pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.08);} }
 </style>
+<script>
+(function(){
+  var tip=document.getElementById('phod-tooltip');
+  var badge=document.getElementById('phod-badge');
+  setTimeout(function(){tip.classList.add('show');},2000);
+  setTimeout(function(){tip.classList.remove('show');},6500);
+  badge.addEventListener('mouseenter',function(){tip.classList.add('show');});
+  badge.addEventListener('mouseleave',function(){tip.classList.remove('show');});
+})();
+</script>
 
 <!-- ANNOUNCEMENT BANNER -->
 <a href="https://play.google.com/store/apps/details?id=com.phoddenge.neet" target="_blank" style="display:block;text-decoration:none;background:linear-gradient(90deg,#1a73e8,#0d47a1);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:600;letter-spacing:0.3px;overflow:hidden;position:relative;">
